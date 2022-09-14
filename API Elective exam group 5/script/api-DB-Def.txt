@@ -1,0 +1,70 @@
+App where user can generate a meal.
+3 types of users: anonym, member, admin
+anonym is unauthendicated.
+member and admin have an account.
+- admin has access to everything, can add, approve or reject meals.
+- member has access to the account, and can upload new meals, but needs the admin to approve it before it goes public.
+- guest can use the app, but not upload a new meal.
+
+meal
+signup
+login
+profile
+createrecipe
+admin
+
+== anonym ==
+GET /api/meal
+    query: ? breakfast, lunch, dinner
+    payload: - 
+    response: {
+        recipeid,
+        recipename,
+        recipedesc,
+        recipeimg,
+        recipekcal,
+        recipeingredients
+    }
+
+POST /api/signup
+    query: -
+    payload: {
+        email,
+        password,
+        loginname
+    }
+    response: {
+        accountid,
+        email,
+        loginname,
+        role: {
+            roleid,
+            rolename
+        }
+    }
+
+POST /api/login
+    query: -
+    payload: 
+
+== member ==
+POST /api/createrecipe
+    query: -
+    payload: {
+        recipename,
+        recipedesc,
+        recipeimg,
+        recipekcal,
+        recipeingredients
+    }
+   
+    response: {
+        recipename,
+        recipedesc,
+        recipeimg,
+        recipekcal,
+        recipeingredients,
+        poststatusname
+    }
+
+GET /api/
