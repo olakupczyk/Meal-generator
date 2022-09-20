@@ -60,17 +60,12 @@ header > article {
 }
 
 main {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    margin: 0 8rem;
+    
 }
 
 .index_section1 {
-    grid-column: 1 / span 3;
-    justify-self: center;
-    display: flex;
     flex-direction: column;
+    display: flex;
 }
 .index_section1 > img {
     margin: 0 auto;
@@ -81,5 +76,52 @@ main {
 h1 {
     text-align: center;
     margin: 1rem 15rem 0 15rem;
+}
+
+.index_section2 {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-top: 8px solid var(--secondaryColor);
+    border-bottom: 8px solid var(--secondaryColor);
+    padding: 0 15rem;
+    transform: skewY(4deg);
+    -webkit-transform: skewY(4deg);
+    -moz-transform: skewY(4deg);
+    -ms-transform: skewY(4deg);
+    -o-transform: skewY(4deg);
+    margin: 3rem 0;
+}
+.index_section2 > article {
+    transform: skewY(-4deg);
+    -webkit-transform: skewY(-4deg);
+    -moz-transform: skewY(-4deg);
+    -ms-transform: skewY(-4deg);
+    -o-transform: skewY(-4deg);
+}
+.index_section2 > article > button {
+    background-color: transparent;
+    border: none;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+.index_section2 > article > button > img {
+    max-width: 230px;
+    transition: .1s ease-in;
+    -webkit-transition: .1s ease-in;
+    -moz-transition: .1s ease-in;
+    -ms-transition: .1s ease-in;
+    -o-transition: .1s ease-in;
+}
+.index_section2 > article > button > img:hover {
+    transform: scale(103%);
+    -webkit-transform: scale(103%);
+    -moz-transform: scale(103%);
+    -ms-transform: scale(103%);
+    -o-transform: scale(103%);
+}
+.index_section2 > article > h2 {
+    text-align: center;
+    font-size: 2rem;
 }
 
