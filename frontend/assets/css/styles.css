@@ -27,6 +27,8 @@ body {
   background-color: var(--mainColor);
 }
 
+
+/* header ________________________________ */
 header {
   background-color: var(--fourthColor);
   transform: skewY(1deg);
@@ -59,10 +61,15 @@ header > article {
     margin-top: 10px;
 }
 
-main {
-    
+/* Footer _________________________________ */
+footer {
+    background-color: var(--fourthColor);
+}
+footer > img {
+    width: 150px;
 }
 
+/* Index.html _______________________________ */
 .index_section1 {
     flex-direction: column;
     display: flex;
@@ -124,4 +131,5 @@ h1 {
     text-align: center;
     font-size: 2rem;
 }
+
 
