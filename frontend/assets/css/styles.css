@@ -27,6 +27,18 @@ body {
   background-color: var(--mainColor);
 }
 
+/*
+ utility classes _______________________ */
+.flex {
+    display: flex;
+}
+.noPadMar {
+    padding: 0;
+    margin: 0;
+}
+.redTxt {
+    color: #FF0808;
+}
 
 /* header ________________________________ */
 header {
@@ -80,7 +92,7 @@ footer > img {
     margin-top: 3rem;
 }
 
-h1 {
+.index_section1 > h1 {
     text-align: center;
     margin: 1rem 15rem 0 15rem;
 }
@@ -132,4 +144,47 @@ h1 {
     font-size: 2rem;
 }
 
+
+/* profile.html __________________________ */
+.profile_section1 {
+    margin: 3rem 15rem 0 15rem;
+}
+
+.mainBtn {
+    font-family: roboto;
+    font-size: 1.4rem;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 0.3rem 2rem;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    margin-bottom: 3rem;
+}
+
+.profile_section2 {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile_section2 > img {
+    width: 200px;
+}
+
+#content th {
+    
+}
+#content td {
+    font-family: roboto;
+    font-size: 1.4rem;
+    
+}
+
+.tableImg {
+    height: 70px;
+}
 
