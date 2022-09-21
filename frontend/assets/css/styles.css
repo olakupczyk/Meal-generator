@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+@import url('http://fonts.cdnfonts.com/css/dexotick-by-dhan-studio');
 
 * {
     box-sizing: border-box;
@@ -207,6 +207,7 @@ footer>img {
 
 /* LOGIN page_____________________ */
 .loginbox {
+    margin-top: 20px;
     width: 370px;
     height: 420px;
     background-color: white;
@@ -229,7 +230,7 @@ h4 {
     padding: 0 0 20px;
     text-align: center;
     font-size: 60px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Dexotick By Dhan Studio', sans-serif;
 }
 
 .loginbox p {
@@ -275,11 +276,12 @@ h4 {
 }
 
 .loginbox a {
+    display: flex;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 13px;
     list-style: none 20px;
     color: var(--fourthColor);
-    text-align: center;
+    justify-content: center;
 }
 
 .loginbox a:hover {
