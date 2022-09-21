@@ -206,7 +206,7 @@ footer>img {
 
 
 /* LOGIN page_____________________ */
-.loginbox {
+.formbox {
     margin-top: 20px;
     width: 370px;
     height: 420px;
@@ -233,19 +233,19 @@ h4 {
     font-family: 'Dexotick By Dhan Studio', sans-serif;
 }
 
-.loginbox p {
+.formbox p {
     margin: 0px;
     padding: 0px;
     font-family: 'Roboto', sans-serif;
-    font-size: 50px;
+    font-size: 12px;
 }
 
-.loginbox input {
+.formbox input {
     width: 100%;
     margin-bottom: 20px;
 }
 
-.loginbox input[type="text"], input[type="password"] {
+.formbox input[type="text"], input[type="password"] {
     border: none;
     border-bottom: 1px solid black;
     background: var(--secondaryColor);
@@ -256,7 +256,7 @@ h4 {
     font-family: roboto;
 }
 
-.loginbox input[type="submit"] {
+.formbox input[type="submit"] {
     border: none;
     outline: none;
     height: 40px;
@@ -270,12 +270,12 @@ h4 {
     -o-border-radius: 20px;
 }
 
-.loginbox input[type="submit"]:hover {
+.formbox input[type="submit"]:hover {
     cursor: pointer;
     color: var(--secondaryColor);
 }
 
-.loginbox a {
+.formbox a {
     display: flex;
     text-decoration: none;
     font-size: 13px;
@@ -284,6 +284,28 @@ h4 {
     justify-content: center;
 }
 
-.loginbox a:hover {
+.formbox a:hover {
     color: var(--secondaryColor);
+}
+
+/* Register page_____________________ */
+.register{
+    margin-top: 50px;
+    height: 500px;
+}
+
+.register a{
+    display: flex;
+    align-items: center;
+    border: solid 1px var(--fourthColor);
+    outline: none;
+    height: 40px;
+    background: white;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
