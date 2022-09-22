@@ -73,6 +73,7 @@ header>article {
 .logo {
     height: 65px;
     margin: 0 auto;
+    cursor: pointer;
 }
 
 .loginBtn>svg {
@@ -169,7 +170,7 @@ footer>img {
 
 /* profile.html __________________________ */
 .profile_section1 {
-    margin: 3rem 15rem 2rem 15rem;
+    margin: 3rem 15rem 4rem 15rem;
 }
 .profile_section1 > h1 {
     font-family: 'Dexotick By Dhan Studio', sans-serif;
@@ -189,7 +190,7 @@ footer>img {
     -moz-border-radius: 25px;
     -ms-border-radius: 25px;
     -o-border-radius: 25px;
-    margin-bottom: 3rem;
+    cursor: pointer;
 }
 
 .profile_section2 {
