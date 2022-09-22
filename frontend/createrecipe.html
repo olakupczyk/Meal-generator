@@ -36,31 +36,35 @@
         </article>
     </header>
     <main>
-        <h1>How to create a recipe</h1>
-        <ul>
-            <li>Fill out the recipe name.</li>
-            <li>Describe your recipe in one sentence.</li>
-            <li>How many calories does the meal have?</li>
-            <li>Fill in all the ingredients needed to cook the meal.</li>
-            <li>Find a picture on the internet and insert the picture adress(URL)</li>
-        </ul>
-        <div class="formbox register">
+        <div class="formbox recipe">
             <h4>Create recipe</h4>
             <form action="">
-                <p>Please fill in this form to create an account.</p>
-                <hr>
 
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <ul>
+                    <li>Fill out the recipe name.</li>
+                    <li>Describe your recipe in one sentence.</li>
+                    <li>How many calories does the meal have?</li>
+                    <li>Fill in all the ingredients needed to cook the meal.</li>
+                    <li>Find a picture on the internet and insert the picture adress(URL)</li>
+                </ul>
 
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <label for="recipename"><b>Recipe name:</b></label>
+                <input type="text" placeholder="Enter name of the recipe" name="recipename" required>
 
-                <label for="psw-repeat"><b>Repeat Password</b></label>
-                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-                <input type="submit" value="Register now">
+                <label for="description"><b>Description of the recipe:</b></label>
+                <input type="text" placeholder="Describe the recipe" name="description" required>
 
-                <a href="login.html">Already have an account? Sign in</a>
+                <label for="kcal"><b>Kcal/100g:</b></label>
+                <input type="text" placeholder="198" name="kcal" required>
+
+                <label for="ingredients"><b>Ingredients:</b></label>
+                <input type="text" placeholder="Type in all of the ingredients" name="ingredients" required>
+
+                <label for="url">Recipe image</label>
+                <input type="url" name="url" placeholder="https://example.com" pattern="https://." size="30">
+
+
+                <input type="submit" value="Create recipe">
             </form>
         </div>
     </main>
