@@ -84,6 +84,7 @@ header>article {
 /* Footer _________________________________ */
 footer {
     background-color: var(--fourthColor);
+    z-index: 99;
 }
 
 footer>img {
@@ -103,6 +104,12 @@ footer>img {
 }
 
 .index_section1>h1 {
+    text-align: center;
+    font-family: 'Dexotick By Dhan Studio', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+}
+.index_section1>h2 {
     text-align: center;
     margin: 1rem 15rem 0 15rem;
 }
@@ -162,7 +169,12 @@ footer>img {
 
 /* profile.html __________________________ */
 .profile_section1 {
-    margin: 3rem 15rem 0 15rem;
+    margin: 3rem 15rem 2rem 15rem;
+}
+.profile_section1 > h1 {
+    font-family: 'Dexotick By Dhan Studio', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
 }
 
 .mainBtn {
@@ -185,22 +197,48 @@ footer>img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 10rem;
+    border-top: 8px solid var(--secondaryColor);
+    border-bottom: 8px solid var(--secondaryColor);
+    transform: skewY(4deg);
+    -webkit-transform: skewY(4deg);
+    -moz-transform: skewY(4deg);
+    -ms-transform: skewY(4deg);
+    -o-transform: skewY(4deg);
 }
 
 .profile_section2>img {
     width: 200px;
+    margin-top: 2rem;
+    transform: skewY(-4deg);
+    -webkit-transform: skewY(-4deg);
+    -moz-transform: skewY(-4deg);
+    -ms-transform: skewY(-4deg);
+    -o-transform: skewY(-4deg);
 }
 
-#content th {}
+#content {
+    border-collapse: collapse;
+    margin: 4rem 0;
+    transform: skewY(-4deg);
+}
+
+#content th {
+    font-family: 'Dexotick By Dhan Studio', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    text-align: left;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 29vw;
+}
 
 #content td {
+    width: 29vw;
     font-family: roboto;
     font-size: 1.4rem;
-
-}
-
-.tableImg {
-    height: 70px;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black
 }
 
 
