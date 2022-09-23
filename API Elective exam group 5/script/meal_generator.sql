@@ -8,15 +8,6 @@ GO
 -- have to drop the dependencies before a table can be dropped
 
 
-ALTER TABLE dbo.genRecipeAuthor
-DROP CONSTRAINT IF EXISTS genFK_RecipeAuthor_Profile
-GO
-ALTER TABLE dbo.genRecipeAuthor
-DROP CONSTRAINT IF EXISTS genFK_RecipeAuthor_Recipe
-GO
-DROP TABLE IF EXISTS dbo.genRecipeAuthor
-GO
-
 ALTER TABLE dbo.genRecipe
 DROP CONSTRAINT IF EXISTS genFK_Recipe_RecipeType
 GO
@@ -77,9 +68,9 @@ CREATE TABLE dbo.genProfile
 (
     profileid INT NOT NULL IDENTITY PRIMARY KEY,
     -- primary key: profileid
-    displayname NVARCHAR(50) NOT NULL,
+    displayname NVARCHAR(50) NOT NULL DEFAULT 'Anonym',
     profiledesc NVARCHAR(255),
-);
+)
 GO
 
 CREATE TABLE dbo.genAccount
@@ -87,7 +78,7 @@ CREATE TABLE dbo.genAccount
     accountid INT NOT NULL IDENTITY PRIMARY KEY,
     accountgenname NVARCHAR(50) NOT NULL UNIQUE,
     accountemail NVARCHAR(255) NOT NULL UNIQUE,
-    FK_roleid INT NOT NULL, 
+    FK_roleid INT NOT NULL DEFAULT 1, 
     FK_profileid INT UNIQUE,
 
     CONSTRAINT genFK_Account_Role FOREIGN KEY (FK_roleid) REFERENCES dbo.genRole(roleid),
@@ -106,8 +97,8 @@ GO
 
 CREATE TABLE dbo.genPostStatus
 (
-    poststatusid INT IDENTITY NOT NULL PRIMARY KEY,
-    poststatusname NVARCHAR(50) NOT NULL,
+    poststatusid INT IDENTITY NOT NULL PRIMARY KEY ,
+    poststatusname NVARCHAR(50) NOT NULL DEFAULT 'Pending',
 );
 
 CREATE TABLE dbo.genRecipeType
@@ -135,15 +126,6 @@ CONSTRAINT genFK_Recipe_PostStatus FOREIGN KEY (FK_poststatusid) REFERENCES dbo.
 CONSTRAINT genFK_Recipe_RecipeType FOREIGN KEY (FK_recipetypeid) REFERENCES dbo.genRecipeType(recipetypeid),
 );
 
-CREATE TABLE dbo.genRecipeAuthor
-(
-    FK_recipeid INT NOT NULL,
-    FK_profileid INT NOT NULL,
-
-    CONSTRAINT genFK_RecipeAuthor_Recipe FOREIGN KEY (FK_recipeid) REFERENCES dbo.genRecipe (recipeid),
-    CONSTRAINT genFK_RecipeAuthor_Profile FOREIGN KEY (FK_profileid) REFERENCES dbo.genProfile (profileid)
-); 
-GO
 
 -- SELECT * FROM genRole
 -- SELECT * FROM genProfile
@@ -157,7 +139,6 @@ GO
 INSERT INTO dbo.genRole
     ([rolename], [roledesc])
 VALUES
-    ('anonym', 'Can view the recipes and use the app but doesnt have any power over the content.'),
     ('member', 'Can use the app and suggest new recipes.'),
     ('admin', 'Can use the app as well as accept and upload new recipes suggested by the member, and edit/delete the content.')
 GO
@@ -180,10 +161,10 @@ GO
 INSERT INTO dbo.genAccount
     ([accountgenname], [accountemail], [FK_roleid], [FK_profileid])
 VALUES
-    ('masterchef', 'marek@abc.com', 2, 1),
-    ('Icookgood', 'ola@abc.com', 1, 2),
-    ('Heppe', 'jeppe@abc.com', 3, 3),
-    ('ReinisComming', 'reinis@abc.com', 3, 4)
+    ('masterchef', 'marek@abc.com', 1, 1),
+    ('Icookgood', 'ola@abc.com', 2, 2),
+    ('Heppe', 'jeppe@abc.com', 2, 3),
+    ('ReinisComming', 'reinis@abc.com', 1, 4)
 GO
 
 SELECT * FROM genAccount
@@ -250,28 +231,6 @@ VALUES
     ('Homemade Pizza', 'Do you own pizza at home!', 150, 3, 3, 'https://images.unsplash.com/photo-1614442316719-1e38c661c29c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG9tZW1hZGUlMjBwaXp6YXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1400&q=60', 'bread flour, kosher salt, sugar, active dry yeast, olive oil, cheese, tomato sauce, ham, mozzarella cheese', 1, 3)
 GO
 
-INSERT INTO dbo.genRecipeAuthor
-([FK_recipeid], [FK_profileid])
-VALUES 
-(1,1),
-(2,2),
-(3,3),
-(4,4),
-(5,4),
-(6,3),
-(7,2),
-(8,1),
-(9,1),
-(10,2),
-(11,3),
-(12,4),
-(13,1),
-(14,2),
-(15,4)
-GO
-
 SELECT * FROM dbo.genRecipe
 GO
 
-Select * FROM dbo.genRecipeAuthor
---4) verifying the DB - read out test data
