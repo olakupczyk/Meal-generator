@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('http://fonts.cdnfonts.com/css/dexotick-by-dhan-studio');
+
+* {
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+:root {
+    --mainColor: #ebb6ed;
+    --secondaryColor: #ffdefa;
+    --thirdColor: #f2cef3;
+    --fourthColor: #111217;
+    --shadowColor: rgba(0, 0, 0, 19);
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    ;
+    color: black;
+    font-weight: 400;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: var(--mainColor);
+}
+
+/*
+ utility classes _______________________ */
+.flex {
+    display: flex;
+}
+
+.noPadMar {
+    padding: 0;
+    margin: 0;
+}
+
+.redTxt {
+    color: #FF0808;
+}
+
+/* header ________________________________ */
+header {
+    background-color: var(--fourthColor);
+    transform: skewY(1deg);
+    -webkit-transform: skewY(1deg);
+    -moz-transform: skewY(1deg);
+    -ms-transform: skewY(1deg);
+    -o-transform: skewY(1deg);
+    margin-top: -14px;
+    box-shadow: 0 10px 6px rgba(0, 0, 0, 0.194);
+    z-index: 99;
+}
+
+header>article {
+    display: flex;
+    transform: skewY(-1deg);
+    -webkit-transform: skewY(-1deg);
+    -moz-transform: skewY(-1deg);
+    -ms-transform: skewY(-1deg);
+    -o-transform: skewY(-1deg);
+    padding-top: 20px;
+
+}
+
+.logo {
+    height: 65px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.loginBtn>svg {
+    height: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Footer _________________________________ */
+footer {
+    background-color: var(--fourthColor);
+    z-index: 99;
+}
+
+footer>img {
+    width: 150px;
+}
+
+/* Index.html _______________________________ */
+.index_section1 {
+    flex-direction: column;
+    display: flex;
+}
+
+.index_section1>img {
+    margin: 0 auto;
+    width: 400px;
+    margin-top: 3rem;
+}
+
+.index_section1>h1 {
+    text-align: center;
+    font-family: 'Dexotick By Dhan Studio', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+}
+.index_section1>h2 {
+    text-align: center;
+    margin: 1rem 15rem 0 15rem;
+}
+
+.index_section2 {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-top: 8px solid var(--secondaryColor);
+    border-bottom: 8px solid var(--secondaryColor);
+    padding: 0 15rem;
+    transform: skewY(4deg);
+    -webkit-transform: skewY(4deg);
+    -moz-transform: skewY(4deg);
+    -ms-transform: skewY(4deg);
+    -o-transform: skewY(4deg);
+    margin: 3rem 0;
+}
+
+.index_section2>article {
+    transform: skewY(-4deg);
+    -webkit-transform: skewY(-4deg);
+    -moz-transform: skewY(-4deg);
+    -ms-transform: skewY(-4deg);
+    -o-transform: skewY(-4deg);
+}
+
+.index_section2>article>button {
+    background-color: transparent;
+    border: none;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.index_section2>article>button>img {
+    max-width: 230px;
+    transition: .1s ease-in;
+    -webkit-transition: .1s ease-in;
+    -moz-transition: .1s ease-in;
+    -ms-transition: .1s ease-in;
+    -o-transition: .1s ease-in;
+}
+
+.index_section2>article>button>img:hover {
+    transform: scale(103%);
+    -webkit-transform: scale(103%);
+    -moz-transform: scale(103%);
+    -ms-transform: scale(103%);
+    -o-transform: scale(103%);
+}
+
+.index_section2>article>h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+/* profile.html __________________________ */
+.profile_section1 {
+    margin: 3rem 15rem 4rem 15rem;
+}
+.profile_section1 > h1 {
+    font-family: 'Dexotick By Dhan Studio', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+.mainBtn {
+    font-family: roboto;
+    font-size: 1.4rem;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 0.3rem 2rem;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    cursor: pointer;
+}
+
+.profile_section2 {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10rem;
+    border-top: 8px solid var(--secondaryColor);
+    border-bottom: 8px solid var(--secondaryColor);
+    transform: skewY(4deg);
+    -webkit-transform: skewY(4deg);
+    -moz-transform: skewY(4deg);
+    -ms-transform: skewY(4deg);
+    -o-transform: skewY(4deg);
+}
+
+.profile_section2>img {
+    width: 200px;
+    margin-top: 2rem;
+    transform: skewY(-4deg);
+    -webkit-transform: skewY(-4deg);
+    -moz-transform: skewY(-4deg);
+    -ms-transform: skewY(-4deg);
+    -o-transform: skewY(-4deg);
+}
+
+#content {
+    border-collapse: collapse;
+    margin: 4rem 0;
+    transform: skewY(-4deg);
+}
+
+#content th {
+    font-family: 'Dexotick By Dhan Studio', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    text-align: left;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 29vw;
+}
+
+#content td {
+    width: 29vw;
+    font-family: roboto;
+    font-size: 1.4rem;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black
+}
+
+
+
+/* LOGIN page_____________________ */
+.formbox {
+    margin-top: 20px;
+    width: 370px;
+    height: 420px;
+    background-color: white;
+    color: var(--fourthColor);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    box-sizing: content-box;
+    padding: 70px 30px;
+    box-shadow: 20px -15px 0 var(--secondaryColor);
+}
+
+h4 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Dexotick By Dhan Studio', sans-serif;
+}
+
+.formbox p {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+.formbox input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.formbox input[type="text"], input[type="password"], input[type="url"] {
+    border: none;
+    border-bottom: 1px solid black;
+    background: var(--secondaryColor);
+    outline: none;
+    height: 50px;
+    color: var(--fourthColor);
+    font-size: 14px;
+    font-family: roboto;
+}
+
+.formbox input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: var(--fourthColor);
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.formbox input[type="submit"]:hover {
+    cursor: pointer;
+    color: var(--secondaryColor);
+}
+
+.formbox a {
+    display: flex;
+    text-decoration: none;
+    font-size: 13px;
+    list-style: none 20px;
+    color: var(--fourthColor);
+    justify-content: center;
+}
+
+.formbox a:hover {
+    color: var(--secondaryColor);
+}
+
+/* Register page_____________________ */
+.register{
+    margin-top: 50px;
+    height: 500px;
+}
+
+.register a{
+    display: flex;
+    align-items: center;
+    border: solid 1px var(--fourthColor);
+    outline: none;
+    height: 40px;
+    background: white;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+
+
+/* Recipe page_____________________ */
+
+.recipe{
+    margin-top: 200px;
+    height: 800px;
+    width: 600px;
+}
+
+.formbox ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+

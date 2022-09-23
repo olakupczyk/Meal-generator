@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/frontend/assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <article>
+            <img onclick="location.href='index.html'" class="logo" src="assets/images/logo.JPG" alt="logo" />
+            <a class="loginBtn" href="">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="81.301"
+                    height="70" viewBox="0 0 81.301 70">
+                    <defs>
+                        <filter id="Icon_metro-user" x="0" y="0" width="81.301" height="70"
+                            filterUnits="userSpaceOnUse">
+                            <feOffset dx="1" input="SourceAlpha" />
+                            <feGaussianBlur stdDeviation="2" result="blur" />
+                            <feFlood flood-color="#c8c1c7" />
+                            <feComposite operator="in" in2="blur" />
+                            <feComposite in="SourceGraphic" />
+                        </filter>
+                    </defs>
+                    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Icon_metro-user)">
+                        <path id="Icon_metro-user-2" data-name="Icon metro-user"
+                            d="M44.1,46.12V42.441c5.453-2.77,9.9-9.674,9.9-16.58,0-11.088,0-20.077-14.85-20.077S24.3,14.773,24.3,25.861c0,6.906,4.448,13.81,9.9,16.58V46.12C17.408,47.357,4.5,54.794,4.5,63.784H73.8c0-8.991-12.909-16.427-29.7-17.664Z"
+                            transform="translate(0.5 0.22)" fill="#fffcfc" />
+                    </g>
+                </svg>
+            </a>
+        </article>
+    </header>
+    <main>
+        <div class="formbox recipe">
+            <h4>Create recipe</h4>
+            <form action="">
+
+                <ul>
+                    <li>Fill out the recipe name.</li>
+                    <li>Describe your recipe in one sentence.</li>
+                    <li>How many calories does the meal have?</li>
+                    <li>Fill in all the ingredients needed to cook the meal.</li>
+                    <li>Find a picture on the internet and insert the picture adress(URL)</li>
+                </ul>
+
+                <label for="recipename"><b>Recipe name:</b></label>
+                <input type="text" placeholder="Enter name of the recipe" name="recipename" required>
+
+                <label for="description"><b>Description of the recipe:</b></label>
+                <input type="text" placeholder="Describe the recipe" name="description" required>
+
+                <label for="kcal"><b>Kcal/100g:</b></label>
+                <input type="text" placeholder="198" name="kcal" required>
+
+                <label for="ingredients"><b>Ingredients:</b></label>
+                <input type="text" placeholder="Type in all of the ingredients" name="ingredients" required>
+
+                <label for="url">Recipe image</label>
+                <input type="url" name="url" placeholder="https://example.com" pattern="https://." size="30">
+
+
+                <input type="submit" value="Create recipe">
+            </form>
+        </div>
+    </main>
+</body>
