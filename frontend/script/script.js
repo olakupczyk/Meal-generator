@@ -26,7 +26,7 @@ getBreakfast.addEventListener("click", () => {
 
       createRecipe(BreakfastRecipes[random]);
 
-      console.log()
+      console.log(BreakfastRecipes[0])
     });
 });
 

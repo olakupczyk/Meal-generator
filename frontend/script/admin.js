@@ -35,19 +35,20 @@ const getAllRecipes = async function () {
         fetch('http://127.0.0.1:8738/api/recipes')
             .then(res => res.json())
             .then(data => {
-
+                
                 data.forEach(recipe => {
                     const markup = `
                 <tr>
                 <td>${recipe.recipename}</td>
                 <td>Active</td>
-                <td class="noPadMar redTxt deleteBtn" data-Btn="${recipe.recipeid}"  >Delete</td>
+                <td class="noPadMar redTxt deleteBtn" data-btn="${recipe.recipeid}"  >Delete</td>
               </tr>
                 `
                     content.insertAdjacentHTML('beforeend', markup);
 
-                    addHandlerToDeleteBtn()
+                    
                 })
+                addHandlerToDeleteBtn()
             })
     } catch (err) {
         console.log(err);
@@ -65,7 +66,7 @@ const addHandlerToDeleteBtn = async function () {
 
             if (!clickedBtn) return;
 
-            const recipeid = clickedBtn.dataset.Btn
+            const recipeid = clickedBtn.dataset.btn
 
             console.log(recipeid);
             const fetchOptions = {
@@ -86,6 +87,7 @@ const addHandlerToDeleteBtn = async function () {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
+                    window.location.reload()
                 })
         })
 

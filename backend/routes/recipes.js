@@ -106,6 +106,8 @@ router.post('/', [auth, admin, check], async (req, res) => {
 //
 router.delete('/:recipeid', [auth, admin, check], async (req, res) => {
     // validate recipeid (in req.params)
+
+    console.log(req.params)
    
     // call Recipe.readById(req.params.recipeid)
     // call recipe.delete()

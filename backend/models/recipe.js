@@ -105,6 +105,7 @@ class Recipe {
                     result.recordset.forEach(record => {
                         // add new recipe
                         const newRecipe = {
+                            recipeid: record.recipeid,
                             recipename: record.recipename,
                             recipedesc: record.recipedesc,
                             recipekcal: record.recipekcal,
@@ -177,7 +178,7 @@ class Recipe {
 
                             WHERE r.recipeid = @recipeid
 
-                        ORDER BY r.recipeid, p.profileid, rt.recipetypeid 
+                            ORDER BY r.recipeid, p.profileid, rt.recipetypeid 
                            
                         `)
 
@@ -285,6 +286,45 @@ class Recipe {
             })();
         })
     }
+
+    delete() {
+
+        return new Promise((resolve, reject) => {
+    
+          (async () => {
+    
+            try {
+    
+              const recipe = await Recipe.readById(this.recipeid);
+              const pool = await sql.connect(con);
+              let result;
+              result = await pool.request()
+    
+                .input('recipeid', sql.Int(), this.recipeid)
+    
+                .query(`
+    
+                  DELETE FROM genRecipe
+    
+                  WHERE recipeid = @recipeid
+    
+                `)
+    
+              resolve(recipe);
+    
+            } catch (err) {
+    
+              reject(err);
+    
+            }
+    
+            sql.close();
+    
+          })()
+    
+        })
+    
+      }
 
 
 }
