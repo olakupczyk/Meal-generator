@@ -14,6 +14,7 @@ router.post('/', async (req,res) => {
  //   res.header('Content-type', 'application/json');
     // for testing the readByEmail
     try{
+        console.log('test');
         const {error} = Account.validateCredentials(req.body);
         if(error) throw {statusCode: 400, errorMessage: `Badly formatted request`, errorObj: error};
 

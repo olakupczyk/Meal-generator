@@ -1,4 +1,5 @@
 const express = require('express');
+//const router = express.Router();
 const app = express();
 
 const env = require('dotenv').config();
@@ -32,7 +33,16 @@ app.use('/api/accounts/login', login);
 app.use('/api/accounts', accounts);
 app.use('/api/profiles', profiles);
 
+// app.get('/api/accounts/login', function(req, res, next) {
+//     const responseJSON = {
+//         "message": `Hello ${req.data.accountgenname}!`
+//     }
+//     res.header('Content-type', 'application/json');
+//     res.send(JSON.stringify(responseJSON));
+// });
+
 app.listen(config.get('port'), console.log(`Listening on port: ${config.get('port')}...`));
+
 
 
 
