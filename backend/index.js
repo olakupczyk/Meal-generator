@@ -32,7 +32,6 @@ app.use('/api/accounts/login', login);
 app.use('/api/accounts', accounts);
 app.use('/api/profiles', profiles);
 
-
 app.listen(config.get('port'), console.log(`Listening on port: ${config.get('port')}...`));
 
 

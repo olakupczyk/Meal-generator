@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="/frontend/assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="script/script.js" defer></script>
 </head>
 
 <body>
@@ -38,23 +39,27 @@
     <main>
         <div class="formbox register">
             <h4>Sign up</h4>
-            <form action="">
+            <form method="post" onsubmit="validateForm(); return false;" action="">
                 <p>Please fill in this form to create an account.</p>
                 <hr>
 
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <input type="text" id="userEmail" placeholder="Enter Email" name="email" required>
+
+                <label for="accname">Account Name</label>
+                <input type="text" id="accountName" placeholder="Enter Username" name="accname" required>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input type="password" id="userPassword" placeholder="Enter Password" name="psw" required>
 
-                <label for="psw-repeat"><b>Repeat Password</b></label>
-                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-                <input type="submit" value="Register now">
+                <!-- <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" required> -->
+                <input type="submit" id="btnSubmit" value="Register now">
 
                 <a href="login.html">Already have an account? Sign in</a>
 
             </form>
         </div>
+        <div id="divOutput"></div>
     </main>
 </body>
