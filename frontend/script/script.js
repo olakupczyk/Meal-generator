@@ -81,12 +81,16 @@ getDinner.addEventListener("click", () => {
 function createRecipe(recipe) {
   mealContainer.innerHTML = `
             <h3>${recipe.recipename}</h3>
-            <img src=${recipe.recipeimg} alt="logo">
-            <h4>About</h4>
-            <p>${recipe.recipedesc}</p>
-            <h4>Ingredients</h4>
-            <p>${recipe.recipeingredients}</p>
-            <h4>Kcal</h4>
-            <p>${recipe.recipekcal}</p>
+            <article class="flex">
+              <img src=${recipe.recipeimg} alt="logo">
+              <article class="recipeStyle">
+                <h4>About:</h4>
+                <p>${recipe.recipedesc}</p>
+                <h4>Ingredients:</h4>
+                <p>${recipe.recipeingredients}</p>
+                <h4>Kcal:</h4>
+                <p>${recipe.recipekcal}</p>
+              </article
+            </article>
     `;
 }

@@ -372,23 +372,43 @@ h4 {
 
 
 
-
 /* Article on index.html_____________________ */
 .recipeStyle {
     display: flex;
+    flex-direction: column;
+    margin: 0 6rem;
 } 
 
-.recipeStyle h4 {
-    font-family: 'Roboto', sans-serif;
-    color: white;
+.recipeStyle h3 {
+    font-family: 'Dexotick By Dhan Studio', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    text-align: center;
+    
 }
 
-.recipeStyle img {
+.recipeStyle > article > img {
     height: 300px;
     width: 300px;
+    object-fit: cover;
     background-color: white;
     padding: 12px;
     box-shadow: 15px -15px 0 var(--secondaryColor);
+    margin-right: 3rem;
 }
+
+.recipeStyle > article > article > h4 {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 30px;
+    text-align: start;
+    padding: 0;
+}
+.recipeStyle > article > article > p {
+    margin-top: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
 
 
