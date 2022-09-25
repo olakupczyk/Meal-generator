@@ -3,4 +3,4 @@ GO
 
 
 SELECT * 
-FROM genRecipe
+FROM genAccount
