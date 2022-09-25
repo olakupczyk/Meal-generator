@@ -10,33 +10,23 @@ getBreakfast.addEventListener("click", () => {
   fetch("http://localhost:8738/api/recipes")
     .then((res) => res.json())
     .then((data) => {
-      let BreakfastRecipes = [];
+      let breakfastRecipes = [];
       data.filter((recipe) => {
         if (recipe.FK_recipetypeid === 1) {
-          BreakfastRecipes.push(recipe)
+          breakfastRecipes.push(recipe)
         }
       })
 
-
-
       //console.log(BreakfastRecipes);
 
-      const max = BreakfastRecipes.length - 1
+      const max = breakfastRecipes.length - 1
       const random = Math.floor(Math.random() * max);
 
-      createRecipe(BreakfastRecipes[random]);
+      createRecipe(breakfastRecipes[random]);
 
-      console.log(BreakfastRecipes[0])
+      console.log(breakfastRecipes[random])
     });
 });
-
-function createRecipe(recipe) {
-  mealContainer.innerHTML = `
-        <div>
-            <p> ${recipe.recipename}</p>
-        </div>
-    `;
-}
 
 
 
@@ -46,36 +36,23 @@ getLunch.addEventListener("click", () => {
   fetch("http://localhost:8738/api/recipes")
     .then((res) => res.json())
     .then((data) => {
-      let LunchRecipes = [];
+      let lunchRecipes = [];
       data.filter((recipe) => {
         if (recipe.FK_recipetypeid === 2) {
-          LunchRecipes.push(recipe)
+          lunchRecipes.push(recipe)
         }
       })
 
       //console.log(LunchRecipes);
 
-      const max = LunchRecipes.length - 1
+      const max = lunchRecipes.length - 1
       const random = Math.floor(Math.random() * max);
 
-      createRecipe(LunchRecipes[random]);
+      createRecipe(lunchRecipes[random]);
 
-      console.log()
+      console.log(lunchRecipes[random])
     });
 });
-
-function createRecipe(recipe) {
-  mealContainer.innerHTML = `
-        <div>
-            <p> ${recipe.recipename} </p>
-        </div>
-    `;
-}
-
-
-
-
-
 
 const getDinner = document.getElementById("dinner");
 
@@ -83,34 +60,33 @@ getDinner.addEventListener("click", () => {
   fetch("http://localhost:8738/api/recipes")
     .then((res) => res.json())
     .then((data) => {
-      let DinnerRecipes = [];
+      let dinnerRecipes = [];
       data.filter((recipe) => {
         if (recipe.FK_recipetypeid === 3) {
-          DinnerRecipes.push(recipe)
+          dinnerRecipes.push(recipe)
         }
       })
 
       //console.log(DinnerRecipes);
 
-      const max = DinnerRecipes.length - 1
+      const max = dinnerRecipes.length - 1
       const random = Math.floor(Math.random() * max);
 
-      createRecipe(DinnerRecipes[random]);
+      createRecipe(dinnerRecipes[random]);
 
-      console.log()
+      console.log(dinnerRecipes[random])
     });
 });
 
 function createRecipe(recipe) {
   mealContainer.innerHTML = `
-        <div>
-            <p> ${recipe.recipename} </p>
-        </div>
+            <h3>${recipe.recipename}</h3>
+            <img src=${recipe.recipeimg} alt="logo">
+            <h4>About</h4>
+            <p>${recipe.recipedesc}</p>
+            <h4>Ingredients</h4>
+            <p>${recipe.recipeingredients}</p>
+            <h4>Kcal</h4>
+            <p>${recipe.recipekcal}</p>
     `;
 }
-
-
-
-
-
-

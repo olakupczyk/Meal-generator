@@ -82,8 +82,7 @@ const addHandlerToDeleteBtn = async function () {
 
             }
 
-            fetch(`
-            http://127.0.0.1:8738/api/recipes/${recipeid}`, fetchOptions)
+            fetch(`http://127.0.0.1:8738/api/recipes/${recipeid}`, fetchOptions)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);

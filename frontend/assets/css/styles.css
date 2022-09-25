@@ -178,6 +178,10 @@ footer>img {
     font-size: 3rem;
 }
 
+.deleteBtn{
+    cursor: pointer;
+}
+
 .mainBtn {
     font-family: roboto;
     font-size: 1.4rem;
@@ -365,4 +369,26 @@ h4 {
   align-items: center;
   margin: 20px 0;
 }
+
+
+
+
+/* Article on index.html_____________________ */
+.recipeStyle {
+    display: flex;
+} 
+
+.recipeStyle h4 {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.recipeStyle img {
+    height: 300px;
+    width: 300px;
+    background-color: white;
+    padding: 12px;
+    box-shadow: 15px -15px 0 var(--secondaryColor);
+}
+
 
