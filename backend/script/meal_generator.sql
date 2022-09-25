@@ -89,7 +89,7 @@ GO
 CREATE TABLE dbo.genPassword
 (
     FK_accountid INT NOT NULL UNIQUE,
-    hashedpassword NVARCHAR(255),
+    hashedpassword NVARCHAR(255) NOT NULL,
 
     CONSTRAINT genFK_Password_Account FOREIGN KEY (FK_accountid) REFERENCES dbo.genAccount(accountid),
 );
