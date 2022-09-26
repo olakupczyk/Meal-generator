@@ -63,7 +63,6 @@ const getAllRecipes = async function () {
 const getAllAccounts = async function () {
 
     try {
-        if (profiles.profiledesc = null)
             fetch('http://127.0.0.1:8738/api/profiles')
                 .then(res => res.json())
                 .then(data => {

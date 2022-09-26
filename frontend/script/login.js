@@ -68,6 +68,9 @@ btnSubmit.addEventListener("click", (e) => {
             if (data.statusCode || Object.keys(data).length === 0) {
                 const markup = `<p class='errorMsg'>${data.errorMessage}</p>`
                 errorMsg.insertAdjacentHTML ('afterbegin', markup)
+                setTimeout(function(){
+                    window.location.reload();
+                 }, 3000);
             }
 
             if (data.role.roleid === 2) {
