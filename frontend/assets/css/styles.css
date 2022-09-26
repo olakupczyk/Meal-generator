@@ -446,5 +446,33 @@ h4 {
     margin-bottom: 3rem;
 }
 
+/* Admin page _________________________ */
+#popUp {
+    transform: skewY(-4deg);
+    -webkit-transform: skewY(-4deg);
+    -moz-transform: skewY(-4deg);
+    -ms-transform: skewY(-4deg);
+    -o-transform: skewY(-4deg);
+    margin-top: 2rem;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+#popUp>article>p {
+    font-size: 1.6rem;
+    margin-top: 0;
+    font-weight: 700;
+}
+#popUp>article>#yes {
+    margin-right: 11rem;
+}
+
+#popUp>article>#no {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
 
 

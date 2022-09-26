@@ -102,8 +102,8 @@ const drawDeleteBtn = async function () {
             const recipeid = clickedBtn.dataset.btn
             const markup = `<article>
             <p>Are you sure about your actions?</p>
-            <button id='yes'>Yes</button>
-            <button id='no'>No</button>
+            <button class="mainBtn" id='yes'>Yes</button>
+            <button class="mainBtn" id='no'>No</button>
             </article>`
 
             popUp.insertAdjacentHTML(`afterbegin`, markup)
