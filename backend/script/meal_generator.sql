@@ -150,9 +150,9 @@ INSERT INTO dbo.genProfile
     ([displayname], [profiledesc])
 VALUES
     ('Marek', 'I love cooking and eating.'),
-    ('Ola', 'I love traveling and expirencing different cultures through food.'),
+    ('Ola', 'I love traveling and experiencing different cultures through food.'),
     ('Jeppe', 'I love spareribs.'),
-    ('Reinis', 'I love fastfood, but sometimes I cook')
+    ('Reinis', 'I love fastfood, but sometimes I cook.')
 GO
 
 SELECT * FROM genProfile
