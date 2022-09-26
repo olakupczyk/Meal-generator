@@ -90,8 +90,8 @@ function createRecipe(recipe) {
                 <p>${recipe.recipeingredients}</p>
                 <h4>Kcal:</h4>
                 <p>${recipe.recipekcal}</p>
-                <h5>Author:${recipe.profile.displayname}</h5>
-                <p>${recipe.profile.profiledesc}</p>
+                <h5>Author: ${recipe.profile.displayname}</h5>
+                <p class="profiledesc">${recipe.profile.profiledesc}</p>
               </article
             </article>
     `;

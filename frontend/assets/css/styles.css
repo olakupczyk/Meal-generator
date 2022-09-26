@@ -168,6 +168,7 @@ footer>img {
 }
 
 
+
 /* profile.html __________________________ */
 .profile_section1 {
     margin: 3rem 15rem 4rem 15rem;
@@ -222,9 +223,14 @@ footer>img {
     -o-transform: skewY(-4deg);
 }
 
+.profile_section2>p {
+    transform: skewY(-4deg);
+    font-size: 1.4rem;
+}
+
 .content {
     border-collapse: collapse;
-    margin: 4rem 0;
+    margin: 4rem 0 6rem;
     transform: skewY(-4deg);
 }
 
@@ -346,11 +352,26 @@ h4 {
     background: white;
     color: rgb(0, 0, 0);
     font-size: 18px;
+    margin-top: 1rem;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
+}
+
+.register a:hover{
+    color: white;
+    background-color: black;
+}
+
+#formContainer > p{
+    font-size: 1.2rem;
+    padding: 0.4rem 0;
+}
+#formContainer > p:first-child{
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
 
@@ -408,6 +429,16 @@ h4 {
     margin-top: 0;
     font-size: 1.6rem;
     font-weight: 700;
+}
+.recipeStyle > article > article > h5 {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0;
+}
+
+.recipeStyle > article > article > p.profiledesc {
+    font-size: 1rem;
+    margin-bottom: 3rem;
 }
 
 
