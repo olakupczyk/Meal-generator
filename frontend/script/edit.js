@@ -45,7 +45,6 @@ const getMyAccount = async function () {
         .then (res => res.json())
         .then (data => {
             console.log(data)
-            userEmail.value = data.accountemail;
             userName.value = data.accountgenname;
         })
     } catch (err) {

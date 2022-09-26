@@ -1,7 +1,8 @@
 const ls = window.localStorage;
 let account
 const signOut = document.querySelector('#signOut');
-const content = document.querySelector('#content')
+const content = document.querySelector('#content');
+const profilesTab = document.querySelector('#profiles');
 
 window.addEventListener('load', async () => {
     try {
@@ -10,6 +11,7 @@ window.addEventListener('load', async () => {
         if (ls.getItem('token') && account.role.roleid === 2) {
 
             await getAllRecipes()
+            await getAllAccounts()
 
         } else {
             window.location.href = "login.html"
@@ -31,6 +33,8 @@ signOut.addEventListener('click', () => {
 
 
 const getAllRecipes = async function () {
+    
+
     try {
         fetch('http://127.0.0.1:8738/api/recipes')
             .then(res => res.json())
@@ -41,7 +45,7 @@ const getAllRecipes = async function () {
                 <tr>
                 <td>${recipe.recipename}</td>
                 <td>Active</td>
-                <td class="noPadMar redTxt deleteBtn" data-btn="${recipe.recipeid}"  >Delete</td>
+                <td class="noPadMar redTxt deleteBtn" data-btn="${recipe.recipeid}">Delete</td>
               </tr>
                 `
                     content.insertAdjacentHTML('beforeend', markup);
@@ -54,6 +58,39 @@ const getAllRecipes = async function () {
         console.log(err);
     }
 }
+
+const getAllAccounts = async function () {
+    
+    if (ls.getItem("token")) {
+
+        fetchOptions.headers["x-authentication-token"] = ls.getItem("token");
+
+    }
+   
+    try {  
+
+        fetch('http://127.0.0.1:8738/api/accounts')
+            .then(res => res.json())
+            .then(data => {
+                
+                data.forEach(account => {
+                    const markupAcc = `
+                <tr>
+                <td>${account.accountgenname}</td>
+                <td>${account.accountemail}</td> 
+              </tr>
+                `
+                    profilesTab.insertAdjacentHTML('beforeend', markupAcc);
+
+                    
+            })
+                addHandlerToDeleteBtn()
+            })
+
+    } catch (err) {
+        console.log(err);
+    }
+} 
 
 const addHandlerToDeleteBtn = async function () {
     try {
@@ -97,5 +134,5 @@ const addHandlerToDeleteBtn = async function () {
     } catch (err) {
         console.log(err)
     }
-
 }
+
