@@ -7,6 +7,7 @@ const con = config.get('dbConfig_UCN');
 const _ = require('lodash');
 const Profile = require('./profile');
 const { create, reject } = require('lodash');
+const Account = require('./account');
 
 class Recipe {
     constructor(recipeObj) {
@@ -246,23 +247,24 @@ class Recipe {
                     // if it is --> should stop the create() method and reject with an error
                     //      e.g. 409 Conflict status code
                     // else --> let's do what we need to...
+    
 
                     const pool = await sql.connect(con);
                     const resultRecipe = await pool.request()
                         .input('recipename', sql.NVarChar(), this.recipename)
                         .input('recipedesc', sql.NVarChar(), this.recipedesc)
                         .input('recipekcal', sql.Int(), this.recipekcal)
-                        .input('FK_accountid', sql.Int(), this.FK_accountid)
-                        .input('FK_profileid', sql.Int(), this.FK_profileid)
+                        .input('accountid', sql.Int(), this.accountid)
+                        .input('profileid', sql.Int(), this.profileid)
                         .input('recipeimg', sql.NVarChar(), this.recipeimg)
                         .input('recipeingredients', sql.NVarChar(), this.recipeingredients)
-                        .input('FK_recipetypeid', sql.Int(), this.FK_recipetypeid)
-                        .input('FK_poststatusid', sql.Int(), this.FK_poststatusid)
+                        .input('recipetypeid', sql.Int(), this.recipetypeid)
+                        .input('poststatusid', sql.Int(), this.poststatusid)
                         .query(`
                             INSERT INTO genRecipe
                                 ([recipename], [recipedesc], [recipekcal], [FK_accountid], [FK_profileid], [recipeimg], [recipeingredients], [FK_recipetypeid], [FK_poststatusid])
                             VALUES
-                                (@recipename, @recipedesc, @recipekcal, @FK_accountid, @FK_profileid, @recipeimg, @recipeingredients, @FK_recipetypeid, @FK_poststatusid);
+                                (@recipename, @recipedesc, @recipekcal, @accountid, @profileid, @recipeimg, @recipeingredients, @recipetypeid, @poststatusid);
                             SELECT *
                             FROM genRecipe r
                             WHERE r.recipeid = SCOPE_IDENTITY()
@@ -271,7 +273,7 @@ class Recipe {
                     // keep tabs on the newly inserted recipe's recipeid
                     if (!resultRecipe.recordset[0]) throw { statusCode: 500, errorMessage: `INSERT failed.`, errorObj: {} }
 
-
+         
                     sql.close();
 
                     const recipe = await Recipe.readById(this.recipeid);

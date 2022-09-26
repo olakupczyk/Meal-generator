@@ -76,13 +76,15 @@ router.get('/:recipeid', async (req, res) => {
 // not fixed and finished
 
 
-router.post('/', [auth, admin, check], async (req, res) => {
+router.post('/', [auth], async (req, res) => {
     res.header('Content-type', 'application/json');
-    // VALIDATE THE USER INPUT AKA.: REQ.BODY
+    // VALIDATE THE Recipe INPUT AKA.: REQ.BODY
     // try to connect to the db and 'save' the new resource (a recipe)
     // prepare response for the client, or error (has to be sent to the client too)
 
     try {
+         
+
         const {error} = Recipe.validate(req.body);
         if (error) throw {statusCode: 400, errorMessage:`Incorrectly formatted payload.`, errorObj: error}
 
