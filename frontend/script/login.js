@@ -27,6 +27,7 @@ const ls = window.localStorage
 const inputEmail = document.querySelector("#userEmail");
 const inputPassword = document.querySelector("#userPassword");
 const btnSubmit = document.querySelector("#btnSubmit");
+const errorMsg= document.querySelector("#errorMessage");
 
 
 
@@ -63,6 +64,11 @@ btnSubmit.addEventListener("click", (e) => {
         .then(data => {
             ls.setItem('account', JSON.stringify(data));
             // console.log(ls.getItem('account'));
+            console.log(data)
+            if (data.statusCode || Object.keys(data).length === 0) {
+                const markup = `<p class='errorMsg'>${data.errorMessage}</p>`
+                errorMsg.insertAdjacentHTML ('afterbegin', markup)
+            }
 
             if (data.role.roleid === 2) {
                 window.location.href = "admin.html"

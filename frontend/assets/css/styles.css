@@ -337,6 +337,11 @@ h4 {
     color: var(--secondaryColor);
 }
 
+.errorMsg{
+    color: #FF0808;
+    font-weight: bold;
+
+}   
 /* Register page_____________________ */
 .register{
     margin-top: 50px;
