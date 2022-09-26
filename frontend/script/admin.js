@@ -3,6 +3,7 @@ let account
 const signOut = document.querySelector('#signOut');
 const content = document.querySelector('#content');
 const profilesTab = document.querySelector('#profiles');
+const popUp = document.querySelector('#popUp');
 
 window.addEventListener('load', async () => {
     try {
@@ -33,13 +34,13 @@ signOut.addEventListener('click', () => {
 
 
 const getAllRecipes = async function () {
-    
+
 
     try {
         fetch('http://127.0.0.1:8738/api/recipes')
             .then(res => res.json())
             .then(data => {
-                
+
                 data.forEach(recipe => {
                     const markup = `
                 <tr>
@@ -50,9 +51,9 @@ const getAllRecipes = async function () {
                 `
                     content.insertAdjacentHTML('beforeend', markup);
 
-                    
+
                 })
-                addHandlerToDeleteBtn()
+                drawDeleteBtn()
             })
     } catch (err) {
         console.log(err);
@@ -60,33 +61,33 @@ const getAllRecipes = async function () {
 }
 
 const getAllAccounts = async function () {
-   
-    try {  
-        if(profiles.profiledesc = null)
-        fetch('http://127.0.0.1:8738/api/profiles')
-            .then(res => res.json())
-            .then(data => {
-                
-                data.forEach(profiles => {
-                    const markupAcc = `
+
+    try {
+        if (profiles.profiledesc = null)
+            fetch('http://127.0.0.1:8738/api/profiles')
+                .then(res => res.json())
+                .then(data => {
+
+                    data.forEach(profiles => {
+                        const markupAcc = `
                 <tr>
                 <td>${profiles.displayname}</td>
                 <td>${profiles.profiledesc}</td> 
                 <td>${profiles.profileid}</td> 
               </tr>
                 `
-                    profilesTab.insertAdjacentHTML('beforeend', markupAcc);
+                        profilesTab.insertAdjacentHTML('beforeend', markupAcc);
 
-                    
-            })
-            })
+
+                    })
+                })
 
     } catch (err) {
         console.log(err);
     }
-} 
+}
 
-const addHandlerToDeleteBtn = async function () {
+const drawDeleteBtn = async function () {
     try {
         //const deleteBtn = document.querySelector('.deleteBtn')
 
@@ -96,8 +97,33 @@ const addHandlerToDeleteBtn = async function () {
             const clickedBtn = e.target.closest(".deleteBtn");
             if (!clickedBtn) return;
 
-            const recipeid = clickedBtn.dataset.btn
+            content.style.opacity = '.5'
 
+            const recipeid = clickedBtn.dataset.btn
+            const markup = `<article>
+            <p>Are you sure about your actions?</p>
+            <button id='yes'>Yes</button>
+            <button id='no'>No</button>
+            </article>`
+
+            popUp.insertAdjacentHTML(`afterbegin`, markup)
+            addHandlerToDeleteBtn(recipeid)
+
+        })
+
+
+
+
+
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+const addHandlerToDeleteBtn = async function (recipeid) {
+    try {
+        const yes = document.querySelector('#yes')
+        yes.addEventListener('click', (e) => {
             console.log(recipeid);
             const fetchOptions = {
 
@@ -120,12 +146,16 @@ const addHandlerToDeleteBtn = async function () {
                 })
         })
 
+        const no = document.querySelector('#no')
+        no.addEventListener('click', (e) => {
+            popUp.innerHTML = ""
+            content.style.opacity = '1'
+        } )
 
-
-
-
-    } catch (err) {
-        console.log(err)
+    } catch (error) {
+        console.log(error)
     }
 }
+
+
 
