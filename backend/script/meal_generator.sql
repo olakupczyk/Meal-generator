@@ -152,7 +152,7 @@ VALUES
     ('Marek', 'I love cooking and eating.'),
     ('Ola', 'I love traveling and expirencing different cultures through food.'),
     ('Jeppe', 'I love spareribs.'),
-    ('Reinis', NULL)
+    ('Reinis', 'I love fastfood, but sometimes I cook')
 GO
 
 SELECT * FROM genProfile

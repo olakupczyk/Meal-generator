@@ -60,31 +60,25 @@ const getAllRecipes = async function () {
 }
 
 const getAllAccounts = async function () {
-    
-    if (ls.getItem("token")) {
-
-        fetchOptions.headers["x-authentication-token"] = ls.getItem("token");
-
-    }
    
     try {  
-
-        fetch('http://127.0.0.1:8738/api/accounts')
+        if(profiles.profiledesc = null)
+        fetch('http://127.0.0.1:8738/api/profiles')
             .then(res => res.json())
             .then(data => {
                 
-                data.forEach(account => {
+                data.forEach(profiles => {
                     const markupAcc = `
                 <tr>
-                <td>${account.accountgenname}</td>
-                <td>${account.accountemail}</td> 
+                <td>${profiles.displayname}</td>
+                <td>${profiles.profiledesc}</td> 
+                <td>${profiles.profileid}</td> 
               </tr>
                 `
                     profilesTab.insertAdjacentHTML('beforeend', markupAcc);
 
                     
             })
-                addHandlerToDeleteBtn()
             })
 
     } catch (err) {
@@ -100,7 +94,6 @@ const addHandlerToDeleteBtn = async function () {
             e.preventDefault();
 
             const clickedBtn = e.target.closest(".deleteBtn");
-
             if (!clickedBtn) return;
 
             const recipeid = clickedBtn.dataset.btn
