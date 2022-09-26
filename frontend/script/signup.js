@@ -38,9 +38,9 @@ btnSubmit.addEventListener("click", (e) => {
 const drawSignedUpMessage = async function(account) {
     formContainer.innerHTML = ''
     formContainer.innerHTML = `
-    <p>You have created an Account
-    </br> <h5>Your username:</h5> <p>${account.accountgenname}</p>
-    </br> <h5>Your Email:</h5> <p>${account.accountemail}</p>
+    <p>You have created an Account</p>
+    <p>Your username: ${account.accountgenname}</p>
+    <p>Your Email: ${account.accountemail}</p>
     <a href="login.html"> Log in </a>
     `
 }
